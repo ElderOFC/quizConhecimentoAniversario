@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Científico da Personalidade Feminina™</title>
+    <!-- Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans para leitura e Playfair Display para elegância -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons para ícones modernos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti para a comemoração final -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at 10% 20%, rgba(255, 240, 245, 1) 0%, rgba(243, 231, 255, 1) 90%);
+        }
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Animação suave para as nuvens/corações flutuantes */
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+        .floating-element {
+            animation: float-slow 6s ease-in-out infinite;
+        }
+        .floating-element-delay {
+            animation: float-slow 8s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden text-slate-800 selection:bg-pink-200">
+
+    <!-- Elementos Flutuantes Decorativos no Background -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute top-12 left-6 md:left-24 text-pink-300 opacity-40 text-4xl floating-element">✨</div>
+        <div class="absolute top-1/4 right-8 md:right-32 text-purple-300 opacity-40 text-5xl floating-element-delay">💖</div>
+        <div class="absolute bottom-20 left-10 md:left-40 text-pink-200 opacity-50 text-3xl floating-element">🌸</div>
+        <div class="absolute bottom-1/3 right-12 text-purple-200 opacity-50 text-4xl floating-element-delay">💎</div>
+    </div>
+
+    <!-- Toast de Notificação customizado (Substituindo o alert nativo) -->
+    <div id="custom-toast" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white text-xs font-semibold px-4 py-3 rounded-2xl shadow-2xl border border-slate-800 flex items-center gap-2.5 transition-all duration-300 opacity-0 pointer-events-none transform -translate-y-2">
+        <span id="toast-icon">✨</span>
+        <span id="toast-message">Mensagem</span>
+    </div>
+
+    <!-- Header -->
+    <header class="w-full py-4 px-6 border-b border-pink-100 bg-white/60 backdrop-blur-md z-10 sticky top-0 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <span class="p-1.5 bg-gradient-to-tr from-pink-400 to-purple-500 rounded-lg text-white shadow-sm">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </span>
+            <span class="font-bold text-sm md:text-base tracking-wide bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                PERSONALIDADE FEMININA™
+            </span>
+        </div>
+        
+        <div class="flex items-center gap-2">
+            <div class="hidden sm:flex items-center gap-1.5 bg-pink-100/60 px-3 py-1 rounded-full text-xs font-semibold text-pink-700 border border-pink-200/50">
+                <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                Dossier Sincronizado
+            </div>
+            <!-- Botão de Acesso Rápido ao Painel Secreto -->
+            <button onclick="openAdminDirectly()" class="flex items-center gap-1 px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 border border-indigo-100 text-indigo-700 rounded-full text-xs font-bold transition-all shadow-sm active:scale-95" title="Acessar Cupido Secreto">
+                <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+                Cupido Secreto 🏹
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow flex items-center justify-center p-4 md:p-8 z-10">
+        <div class="w-full max-w-lg bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/60 overflow-hidden relative p-6 md:p-8">
+            
+            <!-- TELA 1: WELCOME -->
+            <div id="screen-welcome" class="space-y-6 text-center py-6">
+                <div class="inline-flex p-3 bg-pink-100 rounded-2xl text-pink-500 mb-2">
+                    <i data-lucide="microscope" class="w-10 h-10"></i>
+                </div>
+                <h1 class="serif-title text-3xl md:text-4xl font-extrabold text-slate-800 leading-tight">
+                    Teste Científico da <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">Personalidade Feminina</span>™
+                </h1>
+                <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                    Bem-vinda ao teste de perfil comportamental mais avançado da internet. Descubra qual combinação de elegância, caos e charme rege a sua mente brilhante!
+                </p>
+                
+                <!-- Nome / Apelido para identificação no Banco de Dados -->
+                <div class="space-y-2 text-left max-w-sm mx-auto">
+                    <label for="user-nickname" class="text-xs font-bold text-pink-600 uppercase tracking-wider block">Como podemos te chamar de forma fofa?</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
+                            <i data-lucide="heart" class="w-4 h-4 text-pink-400"></i>
+                        </span>
+                        <input type="text" id="user-nickname" placeholder="Digite seu nome ou apelido..." class="w-full pl-10 pr-4 py-3 bg-white/90 border border-pink-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all text-sm font-medium">
+                    </div>
+                </div>
+
+                <div class="bg-purple-50 border border-purple-100 rounded-2xl p-4 text-xs text-purple-700 space-y-1 text-left">
+                    <p class="font-bold flex items-center gap-1.5"><i data-lucide="info" class="w-3.5 h-3.5"></i> Nota Científica:</p>
+                    <p>O algoritmo processa dados através de análises de preferências estéticas, florais e micro-decisões em tempo real para gerar um perfil de personalidade infalível.</p>
+                </div>
+
+                <button onclick="startQuiz()" class="w-full py-4 px-6 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold rounded-2xl shadow-lg shadow-pink-200 hover:shadow-pink-300 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 text-base">
+                    Iniciar Análise Gratuita 
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <p class="text-[10px] text-slate-400">Tempo estimado: 3 minutos • Sem necessidade de cadastro</p>
+                
+                <!-- Atalho Direto na Tela de Boas-vindas -->
+                <div class="pt-4 border-t border-dashed border-pink-150">
+                    <button onclick="openAdminDirectly()" class="text-xs text-indigo-600 hover:text-indigo-800 font-bold inline-flex items-center gap-1.5 transition-colors">
+                        <i data-lucide="lock" class="w-3.5 h-3.5"></i> Já respondeu? Entrar direto no Cupido Secreto
+                    </button>
+                </div>
+            </div>
+
+            <!-- TELA 2: QUIZ -->
+            <div id="screen-quiz" class="hidden space-y-6">
+                <!-- Barra de Progresso Superior -->
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center text-xs text-slate-500">
+                        <span id="progress-text" class="font-semibold text-pink-600">Pergunta 1 de 20</span>
+                        <span id="progress-percent">0% Concluído</span>
+                    </div>
+                    <div class="w-full h-3 bg-pink-100/50 rounded-full overflow-hidden p-0.5 border border-pink-100">
+                        <div id="progress-bar" class="h-full bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-500 rounded-full transition-all duration-300" style="width: 5%;"></div>
+                    </div>
+                </div>
+
+                <!-- Card da Pergunta -->
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <span id="question-emoji" class="text-4xl p-2.5 bg-pink-50 rounded-2xl border border-pink-100 shrink-0">☕</span>
+                        <div>
+                            <span class="text-xs uppercase tracking-wider font-extrabold text-pink-400">Análise de Comportamento</span>
+                            <h2 id="question-text" class="text-lg md:text-xl font-bold text-slate-800 leading-snug mt-1">
+                                Como seria sua manhã de domingo ideal se o mundo parasse por você?
+                            </h2>
+                        </div>
+                    </div>
+
+                    <!-- Opções de Respostas -->
+                    <div id="options-container" class="space-y-3">
+                        <!-- Gerado Dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Botão de Voltar para segurança do usuário -->
+                <button onclick="prevQuestion()" id="btn-back" class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-pink-500 transition-colors">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Voltar à pergunta anterior
+                </button>
+            </div>
+
+            <!-- TELA 3: CALIBRANDO RESULTADOS (LOADING) -->
+            <div id="screen-loading" class="hidden py-12 space-y-8 text-center">
+                <div class="relative w-24 h-24 mx-auto">
+                    <div class="absolute inset-0 rounded-full border-4 border-pink-100 animate-ping"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-t-pink-500 border-r-purple-500 border-b-indigo-400 border-l-transparent animate-spin"></div>
+                    <div class="absolute inset-4 bg-pink-50 rounded-full flex items-center justify-center text-3xl">🧬</div>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="serif-title text-xl font-bold text-slate-800">Processando Respostas Estéticas</h3>
+                    <p id="loading-status" class="text-xs text-slate-500 animate-pulse">Cruzando dados e salvando perfil na nuvem...</p>
+                </div>
+                <div class="max-w-xs mx-auto space-y-1">
+                    <div class="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                        <div id="loading-progress" class="h-full bg-pink-500 transition-all duration-300" style="width: 0%;"></div>
+                    </div>
+                    <p class="text-[10px] text-slate-400">Garantindo sincronização instantânea em tempo real</p>
+                </div>
+            </div>
+
+            <!-- TELA 4: RESULTADO VISÍVEL -->
+            <div id="screen-result" class="hidden space-y-6 py-4">
+                <div class="text-center space-y-3">
+                    <div class="inline-flex p-3 bg-emerald-50 text-emerald-500 rounded-full border border-emerald-100 animate-bounce">
+                        <i data-lucide="check-circle" class="w-10 h-10"></i>
+                    </div>
+                    <h2 class="serif-title text-3xl font-extrabold text-slate-800">Resultado Concluído!</h2>
+                    <p class="text-xs text-slate-400 uppercase tracking-widest font-bold">Relatório Oficial de Traços Clave</p>
+                </div>
+
+                <!-- Parecer Científico Visível -->
+                <div class="bg-gradient-to-tr from-pink-50/80 to-purple-50/80 border border-pink-100 rounded-3xl p-6 space-y-4 text-center">
+                    <span class="text-3xl">👑</span>
+                    <h3 class="font-bold text-lg text-pink-800">Diagnóstico da sua Alma:</h3>
+                    <p class="text-slate-700 text-sm md:text-base leading-relaxed font-medium">
+                        "Parabéns! Segundo nossos cientistas altamente confiáveis, sua personalidade é uma mistura rara de <strong class="text-pink-600">elegância</strong>, <strong class="text-purple-600">caos</strong> e <strong class="text-pink-600">fofura</strong>."
+                    </p>
+                    <p class="text-xs text-slate-500 italic">
+                        Você possui um magnetismo refinado que sabe apreciar os pequenos rituais estéticos da vida, combinando um bom gosto nato para joias e aromas com rompantes espontâneos de criatividade e determinação.
+                    </p>
+                </div>
+
+                <!-- Gráficos de Mentira de Personalidade Divertida -->
+                <div class="space-y-3 bg-white border border-slate-100 p-4 rounded-2xl">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">Espectrograma Emocional</h4>
+                    <div class="space-y-2">
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span>Fofura Radiante</span>
+                                <span class="text-pink-500">89%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-pink-400 rounded-full" style="width: 89%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span>Caos Organizado / Teimosia</span>
+                                <span class="text-purple-500">92%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-purple-400 rounded-full" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span>Estilo e Elegância Estética</span>
+                                <span class="text-slate-700">95%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-700 rounded-full" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões Finais de Fluxo -->
+                <div class="space-y-3 pt-2">
+                    <button onclick="restartQuiz()" class="w-full py-3.5 px-6 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl text-xs transition-all flex items-center justify-center gap-1.5 active:scale-98">
+                        <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Refazer Teste Científico
+                    </button>
+                    
+                    <button onclick="openAdminDirectly()" class="w-full py-3.5 px-6 bg-indigo-50 hover:bg-indigo-100 border border-indigo-100 text-indigo-700 font-bold rounded-2xl text-xs transition-all flex items-center justify-center gap-1.5 active:scale-98">
+                        <i data-lucide="lock" class="w-4 h-4"></i> Acessar Painel do Cupido Secreto 🏹
+                    </button>
+                </div>
+            </div>
+
+            <!-- TELA 5: ÁREA SECRETA DO CUPIDO (ADMIN INDEPENDENTE) -->
+            <div id="screen-admin" class="hidden space-y-6 py-4">
+                <div class="bg-indigo-50/50 border border-indigo-100 rounded-3xl p-5 space-y-4 shadow-sm">
+                    <div class="flex items-center justify-between border-b border-indigo-100/40 pb-3">
+                        <div class="flex items-center gap-2 text-indigo-800">
+                            <span class="p-1.5 bg-indigo-100 text-indigo-600 rounded-lg">
+                                <i data-lucide="lock" class="w-4 h-4"></i>
+                            </span>
+                            <h4 class="font-extrabold text-sm tracking-wide">ÁREA SECRETA DO CUPIDO 🏹</h4>
+                        </div>
+                        <button onclick="closeAdmin()" class="text-slate-400 hover:text-rose-500 transition-colors p-1" title="Sair do Painel">
+                            <i data-lucide="x" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Se você é o parceiro(a) dela, acesse este painel seguro para descobrir em tempo real todas as preferências coletadas na nuvem.
+                    </p>
+
+                    <!-- Entrada de Senha Secreta -->
+                    <div id="admin-auth-box" class="space-y-3">
+                        <div class="flex flex-col gap-2">
+                            <label for="admin-pass" class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider block">Código de Acesso do Cupido</label>
+                            <div class="flex gap-2">
+                                <input type="password" id="admin-pass" placeholder="Insira a Senha (padrão: 1234)" class="flex-grow px-3 py-2.5 text-sm bg-white border border-indigo-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 font-medium">
+                                <button onclick="unlockAdmin()" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl transition-all shadow-md active:scale-95">
+                                    Desbloquear
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-[10px] text-indigo-400 italic">Dica: A senha padrão inicial é <strong>1234</strong> para facilitar o seu acesso imediato.</p>
+                    </div>
+
+                    <!-- Painel Admin Revelado -->
+                    <div id="admin-report-box" class="hidden space-y-4 pt-2">
+                        
+                        <!-- SELETOR DE RESPOSTAS SALVAS NO BANCO -->
+                        <div class="space-y-1.5 text-left">
+                            <label class="text-[10px] font-bold text-indigo-600 uppercase tracking-widest block">Respostas registradas na nuvem:</label>
+                            <select id="admin-submission-selector" onchange="loadSelectedSubmission()" class="w-full p-2.5 bg-white border border-indigo-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-400 text-slate-800">
+                                <option value="">Carregando banco de dados...</option>
+                            </select>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl border border-indigo-100 space-y-3.5 shadow-sm text-left">
+                            <div class="flex items-center justify-between border-b border-indigo-50 pb-2">
+                                <span class="text-xs font-bold text-indigo-600">🎁 Relatório de Inteligência Romântica</span>
+                                <span class="px-2 py-0.5 bg-indigo-100 text-[10px] text-indigo-800 font-extrabold rounded-full uppercase">Altamente Confidencial</span>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <div class="bg-slate-50 p-2.5 rounded-lg col-span-2 flex justify-between items-center">
+                                    <div>
+                                        <p class="text-[10px] text-slate-400 uppercase font-bold">👤 Nome da Usuária</p>
+                                        <p id="admin-user-name" class="font-extrabold text-pink-600 text-sm">Aguardando...</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-[10px] text-slate-400 uppercase font-bold">📅 Data do Teste</p>
+                                        <p id="admin-test-date" class="font-medium text-slate-500 text-[10px]">Aguardando...</p>
+                                    </div>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">🌺 Perfume Recomendado</p>
+                                    <p id="admin-perfume" class="font-bold text-slate-800 text-xs">Aguardando...</p>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">💍 Joia Recomendada</p>
+                                    <p id="admin-jewelry" class="font-bold text-slate-800 text-xs">Aguardando...</p>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">✨ Metal de Preferência</p>
+                                    <p id="admin-metal" class="font-bold text-slate-800 text-xs">Aguardando...</p>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">👗 Tamanho de Roupa</p>
+                                    <p id="admin-size" class="font-bold text-slate-800 text-xs">Aguardando...</p>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg col-span-2">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">💃 Estilo Predominante</p>
+                                    <p id="admin-style" class="font-bold text-slate-800 text-xs">Aguardando...</p>
+                                </div>
+                                
+                                <!-- DUELO DE PERFUMES (Yara vs Sabah al Ward) -->
+                                <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-3 rounded-lg col-span-2 border border-pink-200/60 shadow-inner">
+                                    <p class="text-[10px] text-pink-600 uppercase font-extrabold flex items-center gap-1">
+                                        <i data-lucide="crown" class="w-3.5 h-3.5"></i> Veredito do Duelo de Perfumes
+                                    </p>
+                                    <p id="admin-perfume-choice" class="font-extrabold text-purple-950 text-sm mt-0.5">Aguardando...</p>
+                                    <p id="admin-perfume-reason" class="text-[10px] text-slate-500 mt-1 italic">Processando de forma estatística com base em todas as respostas...</p>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-lg col-span-2">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">❤️ Nível de Romantismo Estimado</p>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <div class="h-2 flex-grow bg-slate-200 rounded-full overflow-hidden">
+                                            <div id="admin-romance-bar" class="h-full bg-rose-500 rounded-full" style="width: 50%;"></div>
+                                        </div>
+                                        <span id="admin-romance" class="font-bold text-rose-600 text-xs">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ações de Cópia e Bloqueio -->
+                        <div class="flex gap-2">
+                            <button onclick="copyAdminText()" class="flex-grow py-2.5 px-4 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl text-xs transition-all flex items-center justify-center gap-2 active:scale-95">
+                                <i data-lucide="copy" class="w-4 h-4"></i> Copiar Dados do Dossiê
+                            </button>
+                            <button onclick="lockAdminPanel()" class="py-2.5 px-3.5 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-bold rounded-xl text-xs transition-all flex items-center justify-center active:scale-95" title="Bloquear Painel">
+                                <i data-lucide="lock" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão de Voltar ao início (Sair do Admin) -->
+                <div class="text-center">
+                    <button onclick="closeAdmin()" class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-pink-500 transition-colors font-bold">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Sair e Voltar para a Tela Inicial
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-4 text-center text-slate-400 text-xs border-t border-slate-100 bg-white/30 z-10">
+        <p>© 2026 Instituto Internacional de Neurociência da Fofura.</p>
+        <p class="text-[10px] mt-0.5 text-slate-400">Todos os direitos de fofura reservados.</p>
+    </footer>
+
+    <!-- Firebase SDK Modules integrados diretamente -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // CONFIGURAÇÃO DO FIREBASE (NATIVA PARA O CANVAS E AJUSTÁVEL PARA O VERCEL)
+        let firebaseConfig = null;
+        if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+            firebaseConfig = JSON.parse(__firebase_config);
+        } else {
+            // SE FOR HOSPEDAR NO VERCEL, SUBSTITUA PELO DO SEU PROJETO EXCLUSIVO:
+            firebaseConfig = {
+                apiKey: "",
+                authDomain: "teste-personalidade-feminina.firebaseapp.com",
+                projectId: "teste-personalidade-feminina",
+                storageBucket: "teste-personalidade-feminina.appspot.com",
+                messagingSenderId: "1234567890",
+                appId: "1:1234:web:abcd"
+            };
+        }
+
+        // Inicializando Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-personality-app';
+
+        // Controle de estados de usuário e submissões
+        let user = null;
+        let allSubmissions = [];
+
+        // Inicializador de Autenticação Silenciosa
+        const initAuth = async () => {
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (err) {
+                console.error("Erro na autenticação do Firebase:", err);
+            }
+        };
+
+        initAuth();
+
+        onAuthStateChanged(auth, (authUser) => {
+            user = authUser;
+            if (user) {
+                setupSubmissionsListener();
+            }
+        });
+
+        // 20 Perguntas detalhadas para mapear as preferências
+        const quizQuestions = [
+            {
+                id: 1,
+                emoji: "☕",
+                text: "Como seria sua manhã de domingo ideal se o mundo parasse por você?",
+                options: [
+                    { text: "Um café expresso duplo em uma xícara de cerâmica fosca", style: "Minimalista", perfume: "Amadeirados" },
+                    { text: "Panquecas quentinhas com calda doce de morango e chantilly", style: "Romântico", perfume: "Doces", yaraWeight: 2 },
+                    { text: "Um croissant francês crocante servido numa bandeja de prata", style: "Elegante", perfume: "Florais", sabahWeight: 1 },
+                    { text: "Uma tigela colorida de açaí com frutas tropicais e granola", style: "Moderno", perfume: "Frutados", yaraWeight: 1 }
+                ]
+            },
+            {
+                id: 2,
+                emoji: "🌬️",
+                text: "Qual destas fragrâncias ambientais te faz respirar fundo e sorrir?",
+                options: [
+                    { text: "O frescor limpo de flores brancas recém-colhidas no jardim", style: "Romântico", perfume: "Florais", sabahWeight: 1 },
+                    { text: "A doçura acolhedora de um bolo de baunilha saindo do forno", style: "Romântico", perfume: "Doces", yaraWeight: 2 },
+                    { text: "A vibração revigorante de frutas cítricas, limão e tangerina", style: "Moderno", perfume: "Frutados" },
+                    { text: "A sofisticação misteriosa de folhas de outono e madeira seca", style: "Elegante", perfume: "Amadeirados", sabahWeight: 1 }
+                ]
+            },
+            {
+                id: 3,
+                emoji: "💍",
+                text: "Se você pudesse usar apenas um tipo de joia pelo resto do ano, qual seria?",
+                options: [
+                    { text: "Um anel delicado e marcante que combina com tudo", style: "Elegante", item: "Anéis" },
+                    { text: "Uma pulseira charmosa que faz um barulhinho suave", style: "Moderno", item: "Pulseiras" },
+                    { text: "Um colar brilhante perto do coração para valorizar o colo", style: "Romântico", item: "Colares" },
+                    { text: "Brincos que emolduram meu rosto com elegância", style: "Minimalista", item: "Brincos" }
+                ]
+            },
+            {
+                id: 4,
+                emoji: "🎨",
+                text: "Qual desses acabamentos de metais preciosos mais reluz a sua pele?",
+                options: [
+                    { text: "O brilho solar, clássico e imponente do Ouro Amarelo", style: "Elegante", metal: "Dourado" },
+                    { text: "O brilho lunar, refinado e clássico da Prata de Lei", style: "Minimalista", metal: "Prata" },
+                    { text: "O charme romântico e super feminino do Rosé Gold", style: "Romântico", metal: "Rosé Gold" },
+                    { text: "Gosto de combinar metais mistos e criar novos estilos!", style: "Moderno", metal: "Misto" }
+                ]
+            },
+            {
+                id: 5,
+                emoji: "🧥",
+                text: "Como você resumiria a curadoria do seu guarda-roupa ideal?",
+                options: [
+                    { text: "Cores neutras, cortes retos e peças atemporais de alta qualidade", style: "Minimalista", sabahWeight: 1 },
+                    { text: "Estampas delicadas, vestidos fluidos, babados e mangas bufantes", style: "Romântico", yaraWeight: 2 },
+                    { text: "Blazers estruturados, camisas impecáveis e calçados finos", style: "Elegante", sabahWeight: 2 },
+                    { text: "Tênis descolados, jaquetas oversized e combinações ousadas", style: "Moderno" }
+                ]
+            },
+            {
+                id: 6,
+                emoji: "📏",
+                text: "Para que suas roupas fiquem perfeitamente confortáveis e sob medida, qual tamanho você costuma escolher?",
+                options: [
+                    { text: "Tamanho PP ou P (para looks delicados e ajustados)", size: "P" },
+                    { text: "Tamanho M (o intermediário ideal com caimento sempre excelente)", size: "M" },
+                    { text: "Tamanho G (conforto extremo e ótimo para modelagens modernas)", size: "G" },
+                    { text: "Tamanho GG ou maior (conforto máximo e looks descontraídos)", size: "GG" }
+                ]
+            },
+            {
+                id: 7,
+                emoji: "🍰",
+                text: "Você entra numa doceria de luxo. Qual sobremesa escolhe sem hesitar?",
+                options: [
+                    { text: "Macarons coloridos de framboesa, leves e delicados", style: "Romântico", perfume: "Frutados", yaraWeight: 1 },
+                    { text: "Um generoso Petit Gâteau quente com chocolate derretido e baunilha", style: "Romântico", perfume: "Doces", yaraWeight: 2, sabahWeight: 1 },
+                    { text: "Mil-folhas tradicional com creme patissière impecável", style: "Elegante", perfume: "Florais", sabahWeight: 1 },
+                    { text: "Torta de chocolate belga intenso com toque de flor de sal", style: "Minimalista", perfume: "Amadeirados", sabahWeight: 2 }
+                ]
+            },
+            {
+                id: 8,
+                emoji: "✈️",
+                text: "Se você ganhasse uma passagem aérea agora, qual seria seu refúgio dos sonhos?",
+                options: [
+                    { text: "Uma cabana charmosa nas florestas frias da Suíça", style: "Minimalista", metal: "Prata", sabahWeight: 1 },
+                    { text: "Um bangalô sobre as águas azul-turquesa de Maldivas", style: "Romântico", metal: "Rosé Gold", yaraWeight: 2 },
+                    { text: "Uma imersão cultural, jantares e compras de luxo em Paris", style: "Elegante", metal: "Dourado", sabahWeight: 2 },
+                    { text: "Explorar a modernidade e as cores de Tóquio", style: "Moderno", metal: "Misto" }
+                ]
+            },
+            {
+                id: 9,
+                emoji: "💐",
+                text: "Se você encontrasse um arranjo de flores misterioso na sua mesa, quais seriam?",
+                options: [
+                    { text: "Um buquê magnífico de Rosas Vermelhas e folhagens clássicas", style: "Romântico", perfume: "Florais", romanceWeight: 10, sabahWeight: 2 },
+                    { text: "Girassóis radiantes que parecem trazer o sol", style: "Moderno", perfume: "Frutados", romanceWeight: 6 },
+                    { text: "Orquídeas raras em um cachepô de cerâmica chique", style: "Elegante", perfume: "Amadeirados", romanceWeight: 8, yaraWeight: 1 },
+                    { text: "Tulipas delicadas em tons pastéis dispostas com leveza", style: "Minimalista", perfume: "Florais", romanceWeight: 7, yaraWeight: 1 }
+                ]
+            },
+            {
+                id: 10,
+                emoji: "🕯️",
+                text: "Qual desses encontros românticos acelera os batimentos do seu coração?",
+                options: [
+                    { text: "Um piquenique super decorado num parque tranquilo no pôr do sol", style: "Romântico", romanceWeight: 10, yaraWeight: 1 },
+                    { text: "Um jantar exclusivo à luz de velas com menu degustação", style: "Elegante", romanceWeight: 9, sabahWeight: 2 },
+                    { text: "Comprar snacks, colocar cobertores no chão e ver filmes clássicos", style: "Minimalista", romanceWeight: 8, yaraWeight: 2 },
+                    { text: "Um show de uma banda favorita ou um bar de jazz secreto", style: "Moderno", romanceWeight: 7, sabahWeight: 1 }
+                ]
+            },
+            {
+                id: 11,
+                emoji: "💎",
+                text: "Ao herdar um anel de família, que design você torce para que ele tenha?",
+                options: [
+                    { text: "Um solitário clássico com brilhante brilhando discretamente", style: "Minimalista", item: "Anéis" },
+                    { text: "Uma peça com detalhes de pequenos corações ou trançados finos", style: "Romântico", item: "Anéis", yaraWeight: 1 },
+                    { text: "Um design geométrico inovador e robusto", style: "Moderno", item: "Anéis" },
+                    { text: "Uma pedra preciosa grande, marcante e colorida (como esmeralda)", style: "Elegante", item: "Anéis", sabahWeight: 1 }
+                ]
+            },
+            {
+                id: 12,
+                emoji: "🎁",
+                text: "Qual é o seu jeitinho favorito de receber carinho e atenção no dia a dia?",
+                options: [
+                    { text: "Um bilhete inesperado ao lado de um mimo carinhoso", style: "Romântico", romanceWeight: 10, yaraWeight: 2 },
+                    { text: "Um abraço apertado e uma conversa sincera sobre nosso futuro", style: "Minimalista", romanceWeight: 8 },
+                    { text: "Me poupar de uma tarefa cansativa ou me surpreender ajudando", style: "Elegante", romanceWeight: 7 },
+                    { text: "Planejar um passeio surpresa completo só para nós dois", style: "Moderno", romanceWeight: 9, sabahWeight: 1 }
+                ]
+            },
+            {
+                id: 13,
+                emoji: "🧴",
+                text: "Se você tivesse que definir seu perfume dos sonhos em uma palavra sensitiva:",
+                options: [
+                    { text: "Aconchegante e cremoso (como um abraço de nuvem doce)", style: "Romântico", perfume: "Doces", yaraWeight: 3 },
+                    { text: "Sedutor e imponente (daquele que deixa rastro e mistério no ar)", style: "Elegante", perfume: "Florais", sabahWeight: 3 },
+                    { text: "Fresco e sutil (apenas um cheirinho limpo de banho tomado)", style: "Minimalista", perfume: "Frutados" },
+                    { text: "Diferente e exótico (algo único que ninguém mais está usando)", style: "Moderno", perfume: "Amadeirados" }
+                ]
+            },
+            {
+                id: 14,
+                emoji: "🍓",
+                text: "Qual dessas combinações de notas olfativas mais desperta sua curiosidade?",
+                options: [
+                    { text: "Morango silvestre, baunilha fofa, coco cremoso e almíscar macio", style: "Romântico", perfume: "Doces", yaraWeight: 4 },
+                    { text: "Jasmim da meia-noite, cacau quente, patchouli sofisticado e pimenta rosa", style: "Elegante", perfume: "Florais", sabahWeight: 4 },
+                    { text: "Lavanda suave, algodão limpo e um toque leve de alecrim do campo", style: "Minimalista", perfume: "Florais" },
+                    { text: "Frutas cítricas com raspas de limão siciliano e sândalo marcante", style: "Moderno", perfume: "Frutados" }
+                ]
+            },
+            {
+                id: 15,
+                emoji: "🧸",
+                text: "Num sábado à noite frio, qual desses cenários combina mais com você?",
+                options: [
+                    { text: "Pijama ultra macio rosa pastel, meias felpudas e chocolate quente cremoso", style: "Romântico", yaraWeight: 3 },
+                    { text: "Um vestido preto elegante de cetim, brincos brilhantes e uma taça de vinho", style: "Elegante", sabahWeight: 3 },
+                    { text: "Roupas confortáveis de moletom para maratonar séries novas", style: "Minimalista", yaraWeight: 1 },
+                    { text: "Um visual descolado para ir a um restaurante japonês esteticamente lindo", style: "Moderno", sabahWeight: 1 }
+                ]
+            },
+            {
+                id: 16,
+                emoji: "💄",
+                text: "Ao finalizar a maquiagem para um evento especial, qual é o item indispensável?",
+                options: [
+                    { text: "Um gloss labial rosado brilhante e bochechas coradas bem fofas", style: "Romântico", yaraWeight: 2 },
+                    { text: "Um batom marcante ou olhar esfumado bem misterioso e delineado", style: "Elegante", sabahWeight: 2 },
+                    { text: "Apenas um corretivo leve e rímel para um look natural", style: "Minimalista" },
+                    { text: "Iluminador holográfico ultra brilhante e sobrancelhas marcantes", style: "Moderno" }
+                ]
+            },
+            {
+                id: 17,
+                emoji: "🌅",
+                text: "Escolha uma paleta de cores para colorir a tela da sua vida hoje:",
+                options: [
+                    { text: "Tons pastel, rosa bebê, lilás fofo e baunilha suave", style: "Romântico", yaraWeight: 3 },
+                    { text: "Preto clássico, vermelho borgonha profundo, ouro e bronze", style: "Elegante", sabahWeight: 3 },
+                    { text: "Branco, cinza mescla, bege areia e detalhes metálicos finos", style: "Minimalista" },
+                    { text: "Neon suave, tons de roxo vibrante e combinações coloridas e ricas", style: "Moderno" }
+                ]
+            },
+            {
+                id: 18,
+                emoji: "🍦",
+                text: "Se você fosse um sabor de sorvete premium, qual seria?",
+                options: [
+                    { text: "Creme de baunilha de Madagascar salpicado com marshmallows macios", style: "Romântico", perfume: "Doces", yaraWeight: 3 },
+                    { text: "Chocolate belga meio amargo trufado com licor de cereja e avelãs", style: "Elegante", perfume: "Amadeirados", sabahWeight: 3 },
+                    { text: "Sorbet refrescante de coco silvestre com fatias finas de manga", style: "Moderno", perfume: "Frutados", yaraWeight: 1 },
+                    { text: "Iogurte grego natural com mel orgânico e amêndoas torradas", style: "Minimalista", perfume: "Florais" }
+                ]
+            },
+            {
+                id: 19,
+                emoji: "🧴",
+                text: "Qual sensação você mais detesta quando usa um perfume novo?",
+                options: [
+                    { text: "Que ele seja forte demais, amargo ou que dê dor de cabeça (prefiro doces cremosos)", style: "Romântico", yaraWeight: 3 },
+                    { text: "Que ele suma rápido e pareça apenas água de colônia boba (prefiro marcantes e longos)", style: "Elegante", sabahWeight: 3 },
+                    { text: "Que ele seja doce e enjoativo feito calda quente de açúcar (prefiro florais chiques)", style: "Minimalista", sabahWeight: 1 },
+                    { text: "Que ele seja comum e todo mundo tenha o mesmo cheiro (prefiro exclusividade)", style: "Moderno" }
+                ]
+            },
+            {
+                id: 20,
+                emoji: "🌠",
+                text: "Por fim, qual desses astros do universo mais atrai seu olhar à noite?",
+                options: [
+                    { text: "Uma estrela cadente brilhante e rápida que traz uma atmosfera de sonhos", style: "Romântico", yaraWeight: 2 },
+                    { text: "A lua cheia, majestosa, brilhando imponente no breu do céu", style: "Elegante", sabahWeight: 2 },
+                    { text: "O céu completamente limpo e escuro, apenas com a elegância do infinito", style: "Minimalista" },
+                    { text: "Uma constelação misteriosa que você tenta desvendar ligando os pontos", style: "Moderno" }
+                ]
+            }
+        ];
+
+        // Estado do Aplicativo
+        let currentIdx = 0;
+        let selectedAnswers = {};
+        let userNickname = "";
+
+        // Toast customizado
+        window.showToast = function(msg, icon = '✨') {
+            const toast = document.getElementById('custom-toast');
+            document.getElementById('toast-message').innerText = msg;
+            document.getElementById('toast-icon').innerText = icon;
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'transform', '-translate-y-2');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none', 'transform', '-translate-y-2');
+                toast.classList.remove('opacity-100');
+            }, 3000);
+        };
+
+        // Entrar na Área do Cupido Direto do Início ou do Fim
+        window.openAdminDirectly = function() {
+            // Oculta todas as telas ativas
+            document.getElementById('screen-welcome').classList.add('hidden');
+            document.getElementById('screen-quiz').classList.add('hidden');
+            document.getElementById('screen-loading').classList.add('hidden');
+            document.getElementById('screen-result').classList.add('hidden');
+            
+            // Exibe a tela isolada do Admin
+            document.getElementById('screen-admin').classList.remove('hidden');
+            
+            // Força o bloqueio inicial para segurança
+            lockAdminPanel();
+        };
+
+        // Fechar Área do Cupido
+        window.closeAdmin = function() {
+            document.getElementById('screen-admin').classList.add('hidden');
+            document.getElementById('screen-welcome').classList.remove('hidden');
+        };
+
+        // Inicializar o quiz
+        window.startQuiz = function() {
+            const nicknameInput = document.getElementById('user-nickname').value.trim();
+            if (!nicknameInput) {
+                showToast("Por favor, digite um nome ou apelido fofinho para podermos calibrar seu teste!", "🌸");
+                return;
+            }
+            userNickname = nicknameInput;
+
+            document.getElementById('screen-welcome').classList.add('hidden');
+            document.getElementById('screen-quiz').classList.remove('hidden');
+            currentIdx = 0;
+            selectedAnswers = {};
+            showQuestion();
+        };
+
+        // Exibir Pergunta Atual
+        function showQuestion() {
+            const q = quizQuestions[currentIdx];
+            
+            document.getElementById('progress-text').innerText = `Pergunta ${currentIdx + 1} de ${quizQuestions.length}`;
+            const percent = Math.round(((currentIdx + 1) / quizQuestions.length) * 100);
+            document.getElementById('progress-percent').innerText = `${percent}%`;
+            document.getElementById('progress-bar').style.width = `${percent}%`;
+
+            document.getElementById('question-emoji').innerText = q.emoji;
+            document.getElementById('question-text').innerText = q.text;
+
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const button = document.createElement('button');
+                button.className = `w-full text-left p-4 rounded-2xl border-2 transition-all flex justify-between items-center group font-medium text-sm md:text-base cursor-pointer
+                    ${selectedAnswers[currentIdx] === idx 
+                        ? 'border-pink-500 bg-pink-50/50 text-pink-900 font-bold' 
+                        : 'border-slate-100 bg-white hover:border-pink-200 hover:bg-pink-50/20 text-slate-700'
+                    }`;
+                
+                button.innerHTML = `
+                    <span class="pr-4 leading-relaxed">${opt.text}</span>
+                    <span class="w-6 h-6 rounded-full border flex items-center justify-center shrink-0 transition-colors
+                        ${selectedAnswers[currentIdx] === idx 
+                            ? 'border-pink-500 bg-pink-500 text-white' 
+                            : 'border-slate-200 group-hover:border-pink-400'
+                        }">
+                        ${selectedAnswers[currentIdx] === idx ? '✓' : ''}
+                    </span>
+                `;
+                button.onclick = () => selectOption(idx);
+                container.appendChild(button);
+            });
+
+            const btnBack = document.getElementById('btn-back');
+            if (currentIdx === 0) {
+                btnBack.classList.add('invisible');
+            } else {
+                btnBack.classList.remove('invisible');
+            }
+
+            lucide.createIcons();
+        }
+
+        function selectOption(index) {
+            selectedAnswers[currentIdx] = index;
+            setTimeout(() => {
+                nextQuestion();
+            }, 200);
+        }
+
+        function nextQuestion() {
+            if (selectedAnswers[currentIdx] === undefined) return;
+
+            if (currentIdx < quizQuestions.length - 1) {
+                currentIdx++;
+                showQuestion();
+            } else {
+                processAndShowLoading();
+            }
+        }
+
+        window.prevQuestion = function() {
+            if (currentIdx > 0) {
+                currentIdx--;
+                showQuestion();
+            }
+        };
+
+        function processAndShowLoading() {
+            document.getElementById('screen-quiz').classList.add('hidden');
+            document.getElementById('screen-loading').classList.remove('hidden');
+
+            const statusMessages = [
+                "Cruzando dados de aroma...",
+                "Calculando quociente de fofura...",
+                "Sincronizando com o banco de dados na nuvem...",
+                "Finalizando relatório estruturado..."
+            ];
+
+            let progressVal = 0;
+            let statusIdx = 0;
+
+            const interval = setInterval(async () => {
+                progressVal += 10;
+                document.getElementById('loading-progress').style.width = `${progressVal}%`;
+                
+                if (progressVal % 30 === 0 && statusIdx < statusMessages.length - 1) {
+                    statusIdx++;
+                    document.getElementById('loading-status').innerText = statusMessages[statusIdx];
+                }
+
+                if (progressVal >= 100) {
+                    clearInterval(interval);
+                    await saveResultsToFirebase();
+                    showResults();
+                }
+            }, 200);
+        }
+
+        // Processamento de métricas e envio ao banco de dados Firestore
+        async function saveResultsToFirebase() {
+            if (!user) {
+                console.error("Usuário não autenticado no Firebase.");
+                return;
+            }
+
+            let perfumeScores = { Florais: 0, Doces: 0, Frutados: 0, Amadeirados: 0 };
+            let metalScores = { Dourado: 0, Prata: 0, "Rosé Gold": 0, Misto: 0 };
+            let jewelryScores = { Anéis: 0, Pulseiras: 0, Colares: 0, Brincos: 0 };
+            let styleScores = { Minimalista: 0, Romântico: 0, Elegante: 0, Moderno: 0 };
+            let yaraTotal = 0;
+            let sabahTotal = 0;
+            let clothingSize = "M";
+            let totalRomanceScore = 0;
+            let romanceWeightCount = 0;
+
+            Object.keys(selectedAnswers).forEach(qKey => {
+                const question = quizQuestions[qKey];
+                const selectedOpt = question.options[selectedAnswers[qKey]];
+
+                if (selectedOpt.perfume) perfumeScores[selectedOpt.perfume]++;
+                if (selectedOpt.metal) metalScores[selectedOpt.metal]++;
+                if (selectedOpt.item) jewelryScores[selectedOpt.item]++;
+                if (selectedOpt.style) styleScores[selectedOpt.style]++;
+                if (selectedOpt.size) clothingSize = selectedOpt.size;
+                if (selectedOpt.romanceWeight !== undefined) {
+                    totalRomanceScore += selectedOpt.romanceWeight;
+                    romanceWeightCount++;
+                }
+                if (selectedOpt.yaraWeight !== undefined) yaraTotal += selectedOpt.yaraWeight;
+                if (selectedOpt.sabahWeight !== undefined) sabahTotal += selectedOpt.sabahWeight;
+            });
+
+            const getHighest = (obj) => Object.keys(obj).reduce((a, b) => obj[a] >= obj[b] ? a : b);
+            const bestPerfume = getHighest(perfumeScores);
+            const bestMetal = getHighest(metalScores);
+            const bestJewelry = getHighest(jewelryScores);
+            const bestStyle = getHighest(styleScores);
+            const avgRomance = romanceWeightCount > 0 ? (totalRomanceScore / (romanceWeightCount * 10)) * 100 : 85;
+
+            let duelVeredict = "";
+            let duelReason = "";
+            if (yaraTotal > sabahTotal) {
+                duelVeredict = "Lattafa Yara (Frasco Rosa)";
+                duelReason = `Ela pontuou mais para o Yara (${yaraTotal} vs ${sabahTotal}). Demonstra preferência por notas cremosas, aconchegantes e doces.`;
+            } else if (sabahTotal > yaraTotal) {
+                duelVeredict = "Sabah al Ward";
+                duelReason = `Ela pontuou mais para o Sabah al Ward (${sabahTotal} vs ${yaraTotal}). Demonstra preferência por notas marcantes, jasmim misterioso e sofisticação.`;
+            } else {
+                if (bestStyle === "Romântico" || bestStyle === "Moderno") {
+                    duelVeredict = "Lattafa Yara (Empate)";
+                    duelReason = "Empate técnico. Pelo estilo romântico geral, o Yara tende a ser a escolha mais fofa e aconchegante.";
+                } else {
+                    duelVeredict = "Sabah al Ward (Empate)";
+                    duelReason = "Empate técnico. Pelo estilo elegante ou refinado dela, o Sabah al Ward é ideal.";
+                }
+            }
+
+            const payload = {
+                nickname: userNickname,
+                timestamp: Date.now(),
+                bestPerfume,
+                bestMetal,
+                bestJewelry,
+                bestStyle,
+                clothingSize,
+                romanceScore: Math.round(avgRomance),
+                duelVeredict,
+                duelReason,
+                rawAnswers: selectedAnswers
+            };
+
+            try {
+                const submissionDoc = doc(collection(db, 'artifacts', appId, 'public', 'data', 'respostas'));
+                await setDoc(submissionDoc, payload);
+            } catch (error) {
+                console.error("Erro ao salvar no banco:", error);
+            }
+        }
+
+        function showResults() {
+            document.getElementById('screen-loading').classList.add('hidden');
+            document.getElementById('screen-result').classList.remove('hidden');
+
+            confetti({
+                particleCount: 150,
+                spread: 85,
+                origin: { y: 0.6 },
+                colors: ['#FFC0CB', '#FF69B4', '#DA70D6', '#E6E6FA']
+            });
+        }
+
+        function setupSubmissionsListener() {
+            if (!user) return;
+
+            const queryRef = collection(db, 'artifacts', appId, 'public', 'data', 'respostas');
+            
+            onSnapshot(queryRef, (snapshot) => {
+                allSubmissions = [];
+                snapshot.forEach(doc => {
+                    allSubmissions.push({ id: doc.id, ...doc.data() });
+                });
+
+                allSubmissions.sort((a, b) => b.timestamp - a.timestamp);
+                renderSubmissionsSelector();
+            }, (error) => {
+                console.error("Erro ao escutar banco:", error);
+            });
+        }
+
+        function renderSubmissionsSelector() {
+            const selector = document.getElementById('admin-submission-selector');
+            selector.innerHTML = '';
+
+            if (allSubmissions.length === 0) {
+                selector.innerHTML = '<option value="">Nenhuma resposta recebida ainda</option>';
+                return;
+            }
+
+            allSubmissions.forEach((sub, idx) => {
+                const dateStr = new Date(sub.timestamp).toLocaleDateString('pt-BR', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                const option = document.createElement('option');
+                option.value = sub.id;
+                option.innerText = `${sub.nickname || "Anônima"} (${dateStr})`;
+                if (idx === 0) option.selected = true;
+                selector.appendChild(option);
+            });
+
+            loadSelectedSubmission();
+        }
+
+        window.loadSelectedSubmission = function() {
+            const selector = document.getElementById('admin-submission-selector');
+            const selectedId = selector.value;
+            if (!selectedId) return;
+
+            const sub = allSubmissions.find(s => s.id === selectedId);
+            if (!sub) return;
+
+            document.getElementById('admin-user-name').innerText = sub.nickname || "Anônima";
+            document.getElementById('admin-test-date').innerText = new Date(sub.timestamp).toLocaleString('pt-BR');
+            document.getElementById('admin-perfume').innerText = `Perfumes ${sub.bestPerfume || "Não mapeado"}`;
+            document.getElementById('admin-jewelry').innerText = sub.bestJewelry || "Não respondido";
+            document.getElementById('admin-metal').innerText = sub.bestMetal || "Não respondido";
+            document.getElementById('admin-size').innerText = `Tamanho ${sub.clothingSize || "M"}`;
+            document.getElementById('admin-style').innerText = `Estilo predominantemente ${sub.bestStyle || "Não mapeado"}`;
+            
+            const romanceScore = sub.romanceScore || 80;
+            document.getElementById('admin-romance').innerText = `${romanceScore}%`;
+            document.getElementById('admin-romance-bar').style.width = `${romanceScore}%`;
+
+            document.getElementById('admin-perfume-choice').innerText = sub.duelVeredict || "Sem dados";
+            document.getElementById('admin-perfume-reason').innerText = sub.duelReason || "Respostas insuficientes";
+        };
+
+        // Autenticação local do Painel Secreto
+        window.unlockAdmin = function() {
+            const pass = document.getElementById('admin-pass').value;
+            if (pass === "1234" || pass.toLowerCase() === "amor") {
+                document.getElementById('admin-auth-box').classList.add('hidden');
+                document.getElementById('admin-report-box').classList.remove('hidden');
+                
+                loadSelectedSubmission();
+                showToast("Dossiê Secreto Desbloqueado com sucesso! 🏹", "🗝️");
+
+                confetti({
+                    particleCount: 40,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 }
+                });
+                confetti({
+                    particleCount: 40,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 }
+                });
+            } else {
+                showToast("Código de segurança inválido. Tente novamente!", "❌");
+            }
+        };
+
+        window.lockAdminPanel = function() {
+            document.getElementById('admin-pass').value = '';
+            document.getElementById('admin-auth-box').classList.remove('hidden');
+            document.getElementById('admin-report-box').classList.add('hidden');
+        };
+
+        // Copiar o dossiê detalhado
+        window.copyAdminText = function() {
+            const userName = document.getElementById('admin-user-name').innerText;
+            const testDate = document.getElementById('admin-test-date').innerText;
+            const perfume = document.getElementById('admin-perfume').innerText;
+            const jewelry = document.getElementById('admin-jewelry').innerText;
+            const metal = document.getElementById('admin-metal').innerText;
+            const size = document.getElementById('admin-size').innerText;
+            const style = document.getElementById('admin-style').innerText;
+            const romance = document.getElementById('admin-romance').innerText;
+            const duelVeredict = document.getElementById('admin-perfume-choice').innerText;
+            const duelReason = document.getElementById('admin-perfume-reason').innerText;
+
+            const fullText = `📊 DOSSIÊ DO CUPIDO - ${userName.toUpperCase()} 📊\n` +
+                             `📅 Data de preenchimento: ${testDate}\n\n` +
+                             `💃 Estilo de Personalidade: ${style}\n` +
+                             `🌺 Família Olfativa Ideal: ${perfume}\n` +
+                             `✨ Veredito do Duelo: ${duelVeredict}\n` +
+                             `📝 Motivação Científica: ${duelReason}\n` +
+                             `💍 Joia mais Desejada: ${jewelry}\n` +
+                             `✨ Cor do Metal ideal: ${metal}\n` +
+                             `👗 Tamanho de Roupa: ${size}\n` +
+                             `💖 Grau de Romantismo: ${romance}\n\n` +
+                             `Gerado pelo Teste Científico da Personalidade Feminina™`;
+
+            const el = document.createElement('textarea');
+            el.value = fullText;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            showToast("Relatório de Inteligência Romântica copiado!", "📋");
+        };
+
+        window.restartQuiz = function() {
+            document.getElementById('screen-result').classList.add('hidden');
+            document.getElementById('screen-welcome').classList.remove('hidden');
+            document.getElementById('user-nickname').value = '';
+            lockAdminPanel();
+        };
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
