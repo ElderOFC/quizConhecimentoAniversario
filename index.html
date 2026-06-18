@@ -269,13 +269,13 @@
                         <div class="flex flex-col gap-2">
                             <label for="admin-pass" class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider block">Código de Acesso do Cupido</label>
                             <div class="flex gap-2">
-                                <input type="password" id="admin-pass" placeholder="Insira a Senha" class="flex-grow px-3 py-2.5 text-sm bg-white border border-indigo-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 font-medium">
+                                <input type="password" id="admin-pass" placeholder="Insira a Senha (padrão: 1234)" class="flex-grow px-3 py-2.5 text-sm bg-white border border-indigo-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 font-medium">
                                 <button onclick="unlockAdmin()" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl transition-all shadow-md active:scale-95">
                                     Desbloquear
                                 </button>
                             </div>
                         </div>
-                        <p class="text-[10px] text-indigo-400 italic">Dica: so o Elder sabe a senha!!</p>
+                        <p class="text-[10px] text-indigo-400 italic">Dica: A senha padrão inicial é <strong>1234</strong> para facilitar o seu acesso imediato.</p>
                     </div>
 
                     <!-- Painel Admin Revelado -->
@@ -382,22 +382,15 @@
         import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // CONFIGURAÇÃO DO FIREBASE (NATIVA PARA O CANVAS E AJUSTÁVEL PARA O VERCEL)
-        let firebaseConfig = null;
-        if (typeof __firebase_config !== 'undefined' && __firebase_config) {
-            firebaseConfig = JSON.parse(__firebase_config);
-        } else {
             // SE FOR HOSPEDAR NO VERCEL, SUBSTITUA PELO DO SEU PROJETO EXCLUSIVO:
-            firebaseConfig = {
-    apiKey: "AIzaSyAWJyWGa48nKkuY6bJP9sbVUJ_ObYt1Wtc",
-    authDomain: "teste-cc04d.firebaseapp.com",
-    projectId: "teste-cc04d",
-    storageBucket: "teste-cc04d.firebasestorage.app",
-    messagingSenderId: "39104923011",
-    appId: "1:39104923011:web:240c6720f105f8ce9ba2b6",
-    measurementId: "G-2DMJHW7D1P"
+            const firebaseConfig = {
+  apiKey: "AIzaSyByCBPdcehNV6916Si3cDdRO3JJcfYQBvA",
+  authDomain: "teste-personalidade-feminina.firebaseapp.com",
+  projectId: "teste-personalidade-feminina",
+  storageBucket: "teste-personalidade-feminina.firebasestorage.app",
+  messagingSenderId: "432125627978",
+  appId: "1:432125627978:web:53183249abd0abce0e60b3"
 };
-        }
 
         // Inicializando Firebase
         const app = initializeApp(firebaseConfig);
@@ -977,7 +970,7 @@
         // Autenticação local do Painel Secreto
         window.unlockAdmin = function() {
             const pass = document.getElementById('admin-pass').value;
-            if (pass === "elder1234" || pass.toLowerCase() === "amor") {
+            if (pass === "1234" || pass.toLowerCase() === "amor") {
                 document.getElementById('admin-auth-box').classList.add('hidden');
                 document.getElementById('admin-report-box').classList.remove('hidden');
                 
